@@ -28,7 +28,7 @@ function showError(arg) {
 }
 
 gulp.task('build', () => {
-  gulp.start('styles', 'scripts');
+  gulp.start('styles', 'scripts', 'libs');
 });
 
 gulp.task('styles', () => {
@@ -90,13 +90,24 @@ gulp.task('scripts', () => {
   );
 });
 
+gulp.task('libs', () => {
+  return gulp.src(['public/src/script/plugins/*.js'])
+  .pipe(plumber(function(error){
+    console.log("Error happend!", error.message);
+    this.emit('end');
+  }))
+  .pipe(concat('libs.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/dist/js'));
+});
+
 gulp.task('watch', ['build'], () => {
   var watcher_scss = gulp.watch('public/src/scss/**/*.scss', ['styles']);
   watcher_scss.on('change', function (path, stats) {
     console.log('File ' + path + ' was changed');
   });
 
-  var watcher_js = gulp.watch(['public/src/script/**/*.js'], ['scripts']);
+  var watcher_js = gulp.watch(['public/src/script/**/*.js'], ['scripts', 'libs']);
   watcher_js.on('change', function (path, stats) {
     console.log('File ' + path + ' was changed');
   });
