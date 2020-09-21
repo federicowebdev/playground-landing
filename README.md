@@ -1,4 +1,4 @@
-# Pixelsc-WebApp
+# Playground Landing Page
 Web app front-end side rendering con Vue in modalità non SPA, Nodejs + Express.js + Mongodb.
 
 ## IMPORTANTE
