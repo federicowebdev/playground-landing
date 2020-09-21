@@ -5,9 +5,24 @@ const fs = require('fs');
 
 //leggo il file tabs.json
 const jsondb = 'tabs';
-let resultsjson;
-resultsjson = JSON.parse(
-  fs.readFileSync(`${__dirname}/../ajax/${jsondb}.json`)
-);
+const tabsjson = JSON.parse(fs.readFileSync(`${__dirname}/../ajax/${jsondb}.json`));
 
-
+exports.getTabs = (req, res) => {
+  try {
+    const id = req.params.id * 1;
+    const tab = tabsjson.find((el) => {
+      return (el.id === id) ? el : null
+    });
+    res.status(200).json({
+      status: 'success',
+      data: {
+        tour: tab,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'error',
+      message: `Something went wrong: ${error}`,
+    });
+  }
+};
