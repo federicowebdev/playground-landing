@@ -3,24 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- includo lo style dell'app minificato -->
+    <!-- include style app style minified -->
     <link rel="stylesheet" href="dist/css/app.min.css" />
-    <!-- indico dove si trova la favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+    <!-- include favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="img/favicon/site.webmanifest" />
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link
+      rel="mask-icon"
+      href="img/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <!-- titolo della pagina -->
-    <title>Playground | Landing</title>
+    <!-- page title -->
+    <title>Playground | Landing Page</title>
   </head>
   <body>
     <nav>
       <div class="container">
         <div class="row">
-          <!-- col for logo -->
+          <!-- col logo -->
           <div class="col logo">
             <svg id="logo-esteso" viewBox="0 0 250 38">
               <path
@@ -28,7 +46,7 @@
               ></path>
             </svg>
           </div>
-          <!-- col for main menu -->
+          <!-- col main menu -->
           <div class="col main-menu">
             <ul>
               <li>
@@ -49,10 +67,131 @@
       </div>
     </nav>
 
-    <main></main>
+    <main>
+      <section id="hero-slider" class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="slide-bg-img"
+              style="background-image: url('img/hero-slider/slide-hello.jpg')"
+            ></div>
+            <div class="slide-desc">
+              <h2>
+                lorem<br />
+                ipsum.
+              </h2>
+              <p>
+                Consectetur adipiscing elit. Nulla condimentum tortor sem, in
+                semper nisl bibendum eu.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="slide-bg-img"
+              style="background-image: url('img/hero-slider/slide-circle.jpg')"
+            ></div>
+            <div class="slide-desc">
+              <h2>
+                lorem<br />
+                ipsum.
+              </h2>
+              <p>
+                Consectetur adipiscing elit. Nulla condimentum tortor sem, in
+                semper nisl bibendum eu.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="slide-bg-img"
+              style="background-image: url('img/hero-slider/slide-play.jpg')"
+            ></div>
+            <div class="slide-desc">
+              <h2>
+                lorem<br />
+                ipsum.
+              </h2>
+              <p>
+                Consectetur adipiscing elit. Nulla condimentum tortor sem, in
+                semper nisl bibendum eu.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </section>
+
+      <section id="cards" class="wrapper-cards">
+        <div class="container">
+          <div class="row">
+            <div class="col card">
+              <div
+                class="card-header"
+                style="background-image: url('img/cards/card-play-harder.jpg')"
+              >
+                <h5>Play Harder</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  Aenean mollis dolor a mattis viverra. In hac habitasse platea
+                  dictumst. Curabitur tempus dui tortor, et bibendum lacus
+                  eleifend ut.
+                </p>
+                <div class="button">
+                  <a href="#">read more</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col card">
+              <div
+                class="card-header"
+                style="background-image: url('img/cards/card-simplicity.jpg')"
+              >
+                <h5>Simplicity</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  Donec vitae augue tellus. Proin et urna sit amet metus
+                  fermentum dapibus non quis urna.
+                </p>
+                <div class="button">
+                  <a href="#">read more</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col card">
+              <div
+                class="card-header"
+                style="background-image: url('img/cards/card-innovation.jpg')"
+              >
+                <h5>Innovation</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  Suspendisse vehicula, lectus sed molestie aliquam, arcu neque
+                  gravida lacus.
+                </p>
+                <div class="button">
+                  <a href="#">read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer></footer>
 
+    <!-- include libs plugins -->
+    <script src="dist/js/libs.min.js"></script>
     <script src="dist/js/app.min.js"></script>
   </body>
 </html>

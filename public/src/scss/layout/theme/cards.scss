@@ -1,0 +1,46 @@
+.wrapper-cards {
+    padding: pxrem(60px) 0;
+    .row {
+        align-items: stretch;
+    }
+    .card {
+        background-color: $white;
+        padding: 0;
+        margin: 0 pxrem(15px);
+        .card-header {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: pxrem(130px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h5 {
+                color: $white;
+                line-height: 0;
+                text-transform: uppercase;
+                letter-spacing: 9px;
+            }
+        }
+        .card-body {
+            padding: pxrem(35px) pxrem(55px);
+            text-align: center;
+            .button {
+                background-color: $black;
+                padding: pxrem(15px) 0;
+                text-align: center;
+                position: absolute;
+                margin-bottom: pxrem(60px);
+                top: 100%;
+                left: 0;
+                width:100%;
+                a {
+                    color: $white;
+                    text-transform: uppercase;
+                    font-size: pxrem(14px);
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+}

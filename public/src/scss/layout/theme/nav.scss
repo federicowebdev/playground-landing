@@ -1,10 +1,15 @@
 nav {
-    height: pxrem(115px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 999;
+    height: pxrem(120px);
     display: flex;
     align-items: center;
     .container {
-        width: 82%;
-        max-width: 100%;
+        width: 80%;
+        max-width: 1150px;
     }
     .row {
         align-items: center;
@@ -13,9 +18,9 @@ nav {
         line-height: 0;
         padding: 0;
         svg {
-            width: pxrem(160px);
-            height: pxrem(25px);
-            fill: $logo-color;
+            width: pxrem(162px);
+            height: pxrem(28px);
+            fill: $logo-color-inverse;
         }
     }
     .main-menu {
@@ -26,9 +31,10 @@ nav {
             li {
                 list-style: none;
                 display: inline-flex;
+                margin: 0 0 0 pxrem(80px);
                 a {
-                    margin: 0 pxrem(20px);
-                    color: $black;
+                    color: $white;
+                    letter-spacing: 0.2px;
                 }
             }
         }

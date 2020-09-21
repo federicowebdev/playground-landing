@@ -4,13 +4,14 @@
 @import "./interface/builder";
 @import "./fonts/builder";
 @import "./layout/theme/builder";
+@import "./plugins/builder";
 
 html {
   @include mq($min-width: 2400px) {
-    font-size: 18px;
+    font-size: 14px;
   }
   @include mq($max-width: 1999px, $min-width: 1600px) {
-    font-size: 15px;
+    font-size: 14px;
   }
   @include mq($max-width: 1599px, $min-width: 1367px) {
     font-size: 14px;
@@ -32,6 +33,6 @@ body {
   height: auto;
   margin: 0;
   padding: 0;
-  background: $white;
+  background-color: $light-grey;
   font-family: $gotham-book;
 }
