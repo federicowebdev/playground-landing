@@ -5,7 +5,7 @@ const morgan = require('morgan');
 //sfrutto il ramework express
 const app = express();
 
-const resultRouter = require('./routes/resultRoutes');
+const tabsRouter = require('./routes/tabsRoutes');
 
 if (process.env.NODE_ENV === 'development') {
   //se il modalità di avvio del server è in "development", mostro le chiamate
@@ -26,6 +26,6 @@ app.get('/', (req, res) => {
 });
 
 //routing delle API per le operazioni di CRUD
-app.use('/api/v1/result', resultRouter);
+app.use('/api/v1/tabs', tabsRouter);
 
 module.exports = app;

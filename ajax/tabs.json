@@ -1,0 +1,10 @@
+[
+  {
+    "tabs": [
+      {
+        "name": "param_one",
+        "rules": { "maj": 20, "min": 10 }
+      }
+    ]
+  }
+]
