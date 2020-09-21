@@ -1,0 +1,36 @@
+nav {
+    height: pxrem(115px);
+    display: flex;
+    align-items: center;
+    .container {
+        width: 82%;
+        max-width: 100%;
+    }
+    .row {
+        align-items: center;
+    }
+    .logo {
+        line-height: 0;
+        padding: 0;
+        svg {
+            width: pxrem(160px);
+            height: pxrem(25px);
+            fill: $logo-color;
+        }
+    }
+    .main-menu {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+        ul {
+            li {
+                list-style: none;
+                display: inline-flex;
+                a {
+                    margin: 0 pxrem(20px);
+                    color: $black;
+                }
+            }
+        }
+    }
+}

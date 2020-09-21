@@ -1,21 +1,25 @@
-@import "mixin";
-@import "media-query";
+@import "./mixin/function";
+@import "./mixin/media-query";
+@import "./layout/builder";
+@import "./interface/builder";
+@import "./fonts/builder";
+@import "./layout/theme/builder";
 
 html {
   @include mq($min-width: 2400px) {
     font-size: 18px;
   }
   @include mq($max-width: 1999px, $min-width: 1600px) {
-    font-size: 16px;
-  }
-  @include mq($max-width: 1599px, $min-width: 1367px) {
     font-size: 15px;
   }
-  @include mq($max-width: 1366px, $min-width: 1000px) {
+  @include mq($max-width: 1599px, $min-width: 1367px) {
     font-size: 14px;
   }
+  @include mq($max-width: 1366px, $min-width: 1000px) {
+    font-size: 13px;
+  }
   @include mq($max-width: 999px, $min-width: 700px) {
-    font-size: 14px;
+    font-size: 13px;
   }
   @include mq($max-width: 699px) {
     font-size: 14px;
@@ -28,118 +32,6 @@ body {
   height: auto;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
-  font-family: "Roboto", sans-serif;
-}
-
-/* vue state */
-[v-cloak] {
-  display: none;
-}
-
-/* main style */
-
-header {
-  nav {
-    background-color: #007bff;
-    .navbar-brand {
-      color: #fff;
-    }
-    a {
-      display: flex !important;
-      align-items: center;
-      svg {
-        margin-left: pxrem(10px);
-        width: pxrem(16px);
-        height: pxrem(16px);
-      }
-    }
-  }
-}
-
-main {
-  padding-bottom: pxrem(100px);
-  h1 {
-    font-size: pxrem(30px);
-  }
-  h1,
-  h5 {
-    font-weight: 300;
-  }
-  .container {
-    @include mq($max-width: 767px) {
-      width: 94%;
-    }
-  }
-}
-
-.wrapper-alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.2);
-  .container {
-    position: absolute;
-    top: pxrem(100px);
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
-    .alert {
-      color: #096fe4;
-      background-color: #fff;
-      border-color: #096fe4;
-      border-radius: 10px;
-      &.alert-danger {
-        color: red;
-        border-color: red;
-      }
-    }
-  }
-}
-
-.wrapper-form {
-  padding-top: pxrem(80px);
-
-  @include mq($max-width: 767px) {
-    padding-top: pxrem(60px);
-  }
-  @include mq($max-width: 320px) {
-    padding-top: pxrem(20px);
-  }
-
-  .wrapper-title {
-    padding-bottom: pxrem(20px);
-  }
-
-  form {
-    margin-bottom: pxrem(50px);
-    padding: 50px 20px;
-    border: 1px solid #f6f6f6;
-    border-radius: 20px;
-    background-color: #fff;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
-    h5 {
-      padding-bottom: pxrem(5px);
-    }
-    label {
-      font-size: pxrem(14px);
-      color: #666;
-    }
-  }
-
-  small.has-error {
-    color: #dc3545;
-  }
-
-  span{
-    font-size: pxrem(11px);
-    font-weight: 800;
-    letter-spacing: 0.6px;
-  }
-
-  .wrapper-btns {
-    padding-top: pxrem(15px);
-  }
+  background: $white;
+  font-family: $gotham-book;
 }

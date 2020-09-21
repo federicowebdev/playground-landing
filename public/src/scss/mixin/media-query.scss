@@ -7,14 +7,6 @@
 
 // --- generator ---------------------------------------------------------------
 
-$hires-desktop: 2560px;
-$extreme-desktop: 1920px;
-$large-desktop: 1680px;
-$desktop: 1440px;
-$portable-desktop: 1366px;
-$small-desktop: 1280px;
-$min-desktop: 1260px;
-
 @mixin mq($args...) {
   $media-type: 'only screen';
   $media-type-key: 'media-type';
