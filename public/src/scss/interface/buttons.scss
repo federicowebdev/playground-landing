@@ -1,0 +1,23 @@
+.btn {
+    .wireframe {
+        padding: pxrem(15px) pxrem(30px);
+        background-color: transparent;
+
+        .light {
+            border: 1px solid $white;
+            a{
+                color: $white;
+            }
+        }
+        .dark {
+            border: 1px solid $black;
+            a{
+                color: $black;
+            }
+        }
+        a{
+            text-transform: uppercase;
+            font-size: pxrem(17px);
+        }
+    }
+}

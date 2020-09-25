@@ -1,0 +1,40 @@
+.banner {
+    height: pxrem(700px);
+    .row {
+        height: 100%;
+    }
+    p {
+        padding-top: pxrem(30px);
+        max-width: pxrem(250px);
+    }
+    .btn {
+        padding-top: pxrem(30px);
+    }
+    &.txt-left {
+        .img {
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+        }
+        .txt {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+            text-align: left;
+            padding-left: pxrem(70px);
+        }
+    }
+
+    &.txt-right {
+        .img {
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+            order: 1;
+        }
+        .txt {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+            order: 0;
+            text-align: right;
+            padding-right: pxrem(70px);
+        }
+    }
+}

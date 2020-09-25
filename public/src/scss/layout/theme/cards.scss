@@ -1,5 +1,8 @@
 .wrapper-cards {
     padding: pxrem(60px) 0;
+    .container{
+        width: 85%;
+    }
     .row {
         align-items: stretch;
     }
