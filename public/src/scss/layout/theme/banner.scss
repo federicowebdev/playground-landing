@@ -1,25 +1,49 @@
+#we-are {
+    margin-top: pxrem(55px);
+}
 .banner {
     height: pxrem(700px);
     .row {
         height: 100%;
     }
     p {
-        padding-top: pxrem(30px);
-        max-width: pxrem(250px);
+        padding-top: pxrem(15px);
+        max-width: pxrem(280px);
     }
     .btn {
-        padding-top: pxrem(30px);
+        margin-top: pxrem(20px);
+    }
+    .img {
+        figure {
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+    }
+    .txt {
+        display: flex;
+        align-items: center;
+    }
+    .img,
+    .txt {
+        padding: 0;
     }
     &.txt-left {
+        color: $white;
         .img {
             flex: 0 0 58.333333%;
             max-width: 58.333333%;
+            figure {
+                background-position: left;
+            }
         }
         .txt {
             flex: 0 0 41.666667%;
             max-width: 41.666667%;
             text-align: left;
-            padding-left: pxrem(70px);
+            padding-left: pxrem(100px);
+            background-color: $black;
         }
     }
 
@@ -28,13 +52,18 @@
             flex: 0 0 58.333333%;
             max-width: 58.333333%;
             order: 1;
+            figure {
+                background-position: right;
+            }
         }
         .txt {
             flex: 0 0 41.666667%;
             max-width: 41.666667%;
             order: 0;
             text-align: right;
-            padding-right: pxrem(70px);
+            padding-right: pxrem(100px);
+            background-color: $white;
+            justify-content: flex-end;
         }
     }
 }

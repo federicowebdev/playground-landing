@@ -1,23 +1,26 @@
 .btn {
-    .wireframe {
-        padding: pxrem(15px) pxrem(30px);
-        background-color: transparent;
-
-        .light {
+    display: inline-flex;
+    &.wireframe {
+        padding: pxrem(18px) pxrem(30px);
+        background-color: transparent;        
+        a{
+            text-transform: uppercase;
+            font-size: pxrem(14px);
+            display: block;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        &.light {
             border: 1px solid $white;
             a{
                 color: $white;
             }
         }
-        .dark {
+        &.dark {
             border: 1px solid $black;
             a{
                 color: $black;
             }
-        }
-        a{
-            text-transform: uppercase;
-            font-size: pxrem(17px);
         }
     }
 }

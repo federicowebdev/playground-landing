@@ -1,7 +1,7 @@
 .wrapper-cards {
-    padding: pxrem(60px) 0;
+    padding: pxrem(90px) 0;
     .container{
-        width: 85%;
+        width: 80%;
     }
     .row {
         align-items: stretch;
@@ -9,7 +9,7 @@
     .card {
         background-color: $white;
         padding: 0;
-        margin: 0 pxrem(15px);
+        margin: 0 pxrem(20px);
         .card-header {
             background-position: center;
             background-repeat: no-repeat;
@@ -26,7 +26,7 @@
             }
         }
         .card-body {
-            padding: pxrem(35px) pxrem(55px);
+            padding: pxrem(30px) pxrem(60px);
             text-align: center;
             .button {
                 background-color: $black;

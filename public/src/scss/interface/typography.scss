@@ -1,18 +1,24 @@
-h2{
+h2 {
     font-size: pxrem(78px);
 }
 
-h5{
+h3 {
+    font-size: pxrem(74px);
+}
+
+h5 {
     font-size: pxrem(18px);
 }
 
-h2, h3, h5{
+h2,
+h3,
+h5 {
     margin: 0;
     font-family: $gotham-bold;
     line-height: 0.92;
 }
 
-p{
+p {
     font-size: pxrem(17px);
     letter-spacing: 0.13px;
     line-height: 1.7;
