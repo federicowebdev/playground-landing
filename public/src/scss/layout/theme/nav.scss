@@ -49,8 +49,7 @@ nav {
 html.changed nav {
     background-color: rgba($white, 0.98);
     border-bottom: 1px solid rgba($black, 0.05);
-    box-shadow: ;
-    height: pxrem(65px);
+    height: 60px;
     .logo {
         svg {
             fill: $logo-color;

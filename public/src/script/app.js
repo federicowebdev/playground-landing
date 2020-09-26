@@ -1,17 +1,35 @@
+import { CookiesManager } from './modules/cookiesManager';
+
 const app = new Vue({
   el: '#app-root',
   data: {
     slider: null,
     sliderContainer: '.swiper-container',
-    html: document.querySelector("html")
+    html: document.querySelector('html'),
+    navLinks: document.querySelectorAll('nav ul li a'),
   },
   //beforeCraete:
   created: function () {
-    // 1) hide loader
+    // hide loader
 
-    // 2) connect animation items
+    // check cookie 
+    const cookies = new CookiesManager();
 
-    // 3) Swiper slider init
+    // nav link animation
+    for (let i = 0; i < this.navLinks.length; i++) {
+      this.navLinks[i].addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.navLinkClick(e);
+      });
+    }
+
+    // connect animation items
+
+    // addEventListener window scroll
+    window.addEventListener('scroll', this.handleScroll);
+
+    // Swiper slider init
     this.slider = new Swiper(this.sliderContainer, {
       loop: true,
       pagination: {
@@ -24,9 +42,6 @@ const app = new Vue({
         prevEl: '.swiper-button-prev',
       },
     });
-
-    // 4) addEventListener window scroll
-    window.addEventListener('scroll', this.handleScroll);
   },
 
   methods: {
@@ -37,6 +52,18 @@ const app = new Vue({
       } else {
         this.html.classList.remove('changed');
       }
+    },
+    navLinkClick(e) {
+      let offset = 60;
+      let href = e.target.href;
+      let targetId = href.split('#')[1];
+      let target = document.querySelector('#' + targetId);
+      anime({
+        targets: 'html, body',
+        scrollTop: target.offsetTop - offset,
+        duration: 500,
+        easing: 'easeInOutQuad',
+      });
     },
   },
 
