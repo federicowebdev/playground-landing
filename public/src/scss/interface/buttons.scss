@@ -1,5 +1,18 @@
 .btn {
+    position: relative;
     display: inline-flex;
+    overflow: hidden;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 101%;
+        height: 100%;
+        transform-origin: top center;
+        transform: scale3d(1, 0, 1);
+        transition: transform 0.45s cubic-bezier(0.1, 0.85, 0.39, 1.01), color 0.1s 0s ease-out;
+        z-index: 0;
+    }
     &.wireframe {
         background-color: transparent;
         display: inline-flex;
@@ -12,6 +25,8 @@
             letter-spacing: 2px;
             font-weight: 600;
             align-items: center;
+            position: relative;
+            z-index: 1;
             i {
                 margin-left: pxrem(15px);
                 font-size: pxrem(18px);
@@ -21,14 +36,42 @@
         }
         &.light {
             border: 1px solid $white;
+            .bg {
+                background-color: $white;
+            }
             a {
                 color: $white;
+            }
+
+            &:hover {
+                .bg {
+                    transform-origin: bottom center;
+                    transition: transform 0.45s cubic-bezier(0.1, 0.85, 0.39, 1.01);
+                    transform: scale3d(1, 1, 1);
+                }
+                a {
+                    color: $black;
+                    font-family: $gotham-medium;
+                }
             }
         }
         &.dark {
             border: 1px solid $black;
+            .bg {
+                background-color: $black;
+            }
             a {
                 color: $black;
+            }
+            &:hover {
+                .bg {
+                    transform-origin: bottom center;
+                    transition: transform 0.45s cubic-bezier(0.1, 0.85, 0.39, 1.01);
+                    transform: scale3d(1, 1, 1);
+                }
+                a {
+                    color: $white;
+                }
             }
         }
     }
@@ -37,6 +80,7 @@
         align-items: center;
         &.grey {
             background-color: $dark-grey-variant-1;
+            transition: background-color 0.3s ease-out;
             a {
                 padding: pxrem(22px) pxrem(70px);
                 font-size: pxrem(15px);
@@ -45,12 +89,14 @@
                 align-items: center;
                 letter-spacing: 0.5px;
                 color: $black;
+                transition: color 0.3s ease-out;
                 i {
                     margin-left: pxrem(15px);
                     font-size: pxrem(18px);
                     font-weight: 300;
                     position: relative;
                     top: pxrem(-1px);
+                    transition: transform 0.3s ease-out;
                 }
             }
             &.active {
@@ -60,7 +106,6 @@
                     font-family: $gotham-medium;
                     i {
                         transform: rotate(180deg);
-                        position: relative;
                         top: pxrem(2px);
                     }
                 }
@@ -74,6 +119,9 @@
         }
         &.light {
             background-color: $white;
+            .bg {
+                background-color: $dark-grey-variant-1;
+            }
             a {
                 padding: pxrem(18px) pxrem(60px);
                 text-transform: uppercase;
@@ -84,11 +132,57 @@
                 align-items: center;
                 font-family: $gotham-medium;
                 color: $black;
+                position: relative;
+                z-index: 1;
                 i {
                     margin-left: pxrem(10px);
                     font-size: pxrem(18px);
                     font-weight: 300;
                     margin-top: pxrem(-2px);
+                }
+            }
+            &:hover {
+                .bg {
+                    transform-origin: bottom center;
+                    transition: transform 0.45s cubic-bezier(0.1, 0.85, 0.39, 1.01);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+        }
+        &.dark {
+            background-color: $black;
+            justify-content: center;
+            padding: 0;
+            .bg {
+                background-color: $dark-grey-variant-1;
+            }
+            a {
+                padding: pxrem(18px) pxrem(60px);
+                text-transform: uppercase;
+                font-size: pxrem(13px);
+                display: flex;
+                letter-spacing: 2px;
+                font-weight: 600;
+                align-items: center;
+                font-family: $gotham-medium;
+                color: $white;
+                position: relative;
+                z-index: 1;
+                i {
+                    margin-left: pxrem(10px);
+                    font-size: pxrem(18px);
+                    font-weight: 300;
+                    margin-top: pxrem(-2px);
+                }
+            }
+            &:hover {
+                .bg {
+                    transform-origin: bottom center;
+                    transition: transform 0.45s cubic-bezier(0.1, 0.85, 0.39, 1.01);
+                    transform: scale3d(1, 1, 1);
+                }
+                a {
+                    color: $black;
                 }
             }
         }

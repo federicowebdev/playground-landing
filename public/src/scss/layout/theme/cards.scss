@@ -1,6 +1,6 @@
 .wrapper-cards {
     padding: pxrem(90px) 0;
-    .container{
+    .container {
         width: 80%;
     }
     .row {
@@ -28,21 +28,12 @@
         .card-body {
             padding: pxrem(30px) pxrem(60px);
             text-align: center;
-            .button {
-                background-color: $black;
-                padding: pxrem(15px) 0;
-                text-align: center;
+            .btn {
                 position: absolute;
                 margin-bottom: pxrem(60px);
                 top: 100%;
                 left: 0;
-                width:100%;
-                a {
-                    color: $white;
-                    text-transform: uppercase;
-                    font-size: pxrem(14px);
-                    letter-spacing: 0.5px;
-                }
+                width: 100%;
             }
         }
     }

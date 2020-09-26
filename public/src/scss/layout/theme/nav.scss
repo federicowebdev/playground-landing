@@ -1,12 +1,15 @@
 nav {
     position: fixed;
     top: 0;
-    left: 0;
-    width:100%;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    width: 100%;
     z-index: 999;
     height: pxrem(120px);
     display: flex;
     align-items: center;
+    max-width: 1440px;
+    transition: all 0.3s ease-out;
     .container {
         width: 80%;
         max-width: 1150px;
@@ -21,6 +24,7 @@ nav {
             width: pxrem(162px);
             height: pxrem(28px);
             fill: $logo-color-inverse;
+            transition: fill 0.3s ease-out;
         }
     }
     .main-menu {
@@ -35,6 +39,27 @@ nav {
                 a {
                     color: $white;
                     letter-spacing: 0.2px;
+                    transition: color 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+html.changed nav {
+    background-color: $white;
+    height: pxrem(65px);
+    .logo {
+        svg {
+            fill: $logo-color;
+        }
+    }
+    .main-menu {
+        ul {
+            li {
+                a {
+                    color: $black;                    
+                    font-weight: 600;
                 }
             }
         }
