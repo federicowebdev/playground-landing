@@ -1,25 +1,95 @@
 .btn {
     display: inline-flex;
     &.wireframe {
-        padding: pxrem(18px) pxrem(30px);
-        background-color: transparent;        
-        a{
+        background-color: transparent;
+        display: inline-flex;
+        align-items: center;
+        a {
+            padding: pxrem(18px) pxrem(30px);
             text-transform: uppercase;
-            font-size: pxrem(14px);
-            display: block;
+            font-size: pxrem(13px);
+            display: flex;
             letter-spacing: 2px;
             font-weight: 600;
+            align-items: center;
+            i {
+                margin-left: pxrem(15px);
+                font-size: pxrem(18px);
+                font-weight: 300;
+                margin-top: pxrem(-1px);
+            }
         }
         &.light {
             border: 1px solid $white;
-            a{
+            a {
                 color: $white;
             }
         }
         &.dark {
             border: 1px solid $black;
-            a{
+            a {
                 color: $black;
+            }
+        }
+    }
+    &.solid {
+        display: inline-flex;
+        align-items: center;
+        &.grey {
+            background-color: $dark-grey-variant-1;
+            a {
+                padding: pxrem(22px) pxrem(70px);
+                font-size: pxrem(15px);
+                display: flex;
+                font-weight: 600;
+                align-items: center;
+                letter-spacing: 0.5px;
+                color: $black;
+                i {
+                    margin-left: pxrem(15px);
+                    font-size: pxrem(18px);
+                    font-weight: 300;
+                    position: relative;
+                    top: pxrem(-1px);
+                }
+            }
+            &.active {
+                background-color: $black;
+                a {
+                    color: $white;
+                    font-family: $gotham-medium;
+                    i {
+                        transform: rotate(180deg);
+                        position: relative;
+                        top: pxrem(2px);
+                    }
+                }
+            }
+            &:hover {
+                background-color: $black;
+                a {
+                    color: $white;
+                }
+            }
+        }
+        &.light {
+            background-color: $white;
+            a {
+                padding: pxrem(18px) pxrem(60px);
+                text-transform: uppercase;
+                font-size: pxrem(13px);
+                display: flex;
+                letter-spacing: 2px;
+                font-weight: 600;
+                align-items: center;
+                font-family: $gotham-medium;
+                color: $black;
+                i {
+                    margin-left: pxrem(10px);
+                    font-size: pxrem(18px);
+                    font-weight: 300;
+                    margin-top: pxrem(-2px);
+                }
             }
         }
     }

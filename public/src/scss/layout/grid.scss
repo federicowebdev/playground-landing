@@ -1,6 +1,8 @@
-main{
+main {
     max-width: 1440px;
     margin: auto;
+    border-left: 1px solid $dark-grey;
+    border-right: 1px solid $dark-grey;
 }
 
 .container {
@@ -49,6 +51,16 @@ main{
     flex: 0 0 auto;
     width: auto;
     max-width: none;
+}
+
+.col.half {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col.full {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 // .col-1 {

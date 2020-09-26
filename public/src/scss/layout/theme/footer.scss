@@ -1,0 +1,41 @@
+footer {
+    .container {
+        padding: pxrem(100px) 0 pxrem(120px);
+        background-color: $black;
+    }
+    .wrapper-logo {
+        text-align: center;
+        svg {
+            width: pxrem(165px);
+        }
+    }
+    .wrapper-nav {
+        text-align: center;
+        padding-top: pxrem(60px);
+        ul {
+            li {
+                display: inline-flex;
+                margin: 0 pxrem(45px);
+                a {
+                    color: $white;
+                    letter-spacing: 0.2px;
+                }
+            }
+        }
+    }
+    .wrapper-socials {
+        text-align: center;
+        padding-top: pxrem(60px);
+        ul {
+            li {
+                display: inline-flex;
+                margin: 0 pxrem(15px);
+                a {
+                    color: rgba($white, 0.3);
+                    font-size: pxrem(22px);
+                    letter-spacing: 0.2px;
+                }
+            }
+        }
+    }
+}

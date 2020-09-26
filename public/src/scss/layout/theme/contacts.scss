@@ -1,0 +1,28 @@
+.wrapper-contacts {
+    background-color: $black;
+    color: $white;
+    padding: pxrem(115px) 0;
+    border-bottom: 2px solid rgba($white, 0.2);
+    .position {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+    p {
+        padding-top: pxrem(15px);
+        a {
+            color: $white;
+        }
+    }
+    .form {
+        padding: 0;
+        form {
+            input,
+            textarea {
+                margin-bottom: pxrem(17px);
+            }
+        }
+    }
+    textarea {
+        height: pxrem(150px);
+    }
+}

@@ -6,12 +6,17 @@ h3 {
     font-size: pxrem(74px);
 }
 
+h4 {
+    font-size: pxrem(68px);
+}
+
 h5 {
     font-size: pxrem(18px);
 }
 
 h2,
 h3,
+h4,
 h5 {
     margin: 0;
     font-family: $gotham-bold;
@@ -22,4 +27,8 @@ p {
     font-size: pxrem(17px);
     letter-spacing: 0.13px;
     line-height: 1.7;
+}
+
+.fa{
+    font-family: $fontawesome;
 }
