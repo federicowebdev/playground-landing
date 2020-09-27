@@ -69,6 +69,7 @@ nav {
                 height: 2px;
                 width: pxrem(35px);
                 margin: pxrem(6px) 0;
+                transition: margin 0.2s ease-out;
             }
         }
 
@@ -124,7 +125,7 @@ nav {
                     font-family: $gotham-bold;
                     color: $black;
 
-                    @include mq($max-width: 767px){
+                    @include mq($max-width: 767px) {
                         font-size: pxrem(50px);
                     }
                 }
@@ -139,6 +140,13 @@ nav {
 }
 
 html.mobile-menu-show {
+    nav .hamb {
+        .inner-hamb {
+            .hamb-line {
+                margin: -2px 0;
+            }
+        }
+    }
     .nav-menu-mobile {
         opacity: 1;
         visibility: visible;
