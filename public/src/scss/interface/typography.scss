@@ -29,6 +29,13 @@ p {
     line-height: 1.7;
 }
 
+html.safari{
+    .fa{
+        display: none;
+    }
+}
+
 .fa{
     font-family: $fontawesome;
+    text-rendering: optimizeLegibility;
 }

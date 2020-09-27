@@ -39,6 +39,10 @@ footer {
                     color: rgba($white, 0.3);
                     font-size: pxrem(22px);
                     letter-spacing: 0.2px;
+                    transition: color 0.2s ease-out;
+                    &:hover{
+                        color: rgba($white, 1);
+                    }
                 }
             }
         }

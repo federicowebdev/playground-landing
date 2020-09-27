@@ -39,7 +39,10 @@ nav {
                 a {
                     color: $white;
                     letter-spacing: 0.2px;
-                    transition: color 0.3s ease-in-out;
+                    transition: color 0.2s ease-out;
+                    &:hover{
+                        color: rgba($white, 0.7);
+                    }
                 }
             }
         }
@@ -61,6 +64,10 @@ html.changed nav {
                 a {
                     color: $black;                    
                     font-weight: 600;
+                    transition: color 0.2s ease-out;
+                    &:hover{
+                        color: rgba($black, 0.5);
+                    }
                 }
             }
         }
