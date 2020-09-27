@@ -6,6 +6,7 @@ footer {
     .wrapper-logo {
         text-align: center;
         svg {
+            fill: $white;
             width: pxrem(165px);
         }
     }

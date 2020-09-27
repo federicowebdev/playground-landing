@@ -9,7 +9,26 @@ var app = new Vue({
     slider: null,
     sliderContainer: '.swiper-container',
     html: document.querySelector('html'),
-    navLinks: document.querySelectorAll('nav ul li a')
+    navLinks: document.querySelectorAll('nav ul li a'),
+    form: {
+      name: {
+        value: null,
+        class: ''
+      },
+      lastName: {
+        value: null,
+        class: ''
+      },
+      email: {
+        value: null,
+        class: ''
+      },
+      message: {
+        value: null,
+        class: ''
+      },
+      errors: []
+    }
   },
   //beforeCraete:
   created: function created() {
@@ -69,6 +88,37 @@ var app = new Vue({
         duration: 500,
         easing: 'easeInOutQuad'
       });
+    },
+
+    validateEmail: function validateEmail(email) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    },
+    submitMessage: function submitMessage(e) {
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      this.form.errors = [];
+
+      if (!this.form.email.value || !this.form.email.value.trim() == '' || !this.validateEmail(this.form.email.value)) {
+        this.form.errors.push("Email required!");
+        this.form.email.class = 'has-error';
+      }
+
+      if (!this.form.message.value || !this.form.message.value.trim() == '') {
+        this.form.errors.push("Message required!");
+        this.form.message.class = 'has-error';
+      }
+
+      if (!this.form.errors.length) {
+        return true;
+      }
+    },
+    removeFormErrors: function removeFormErrors() {
+      this.form.errors = [];
+      this.form.email.class = '';
+      this.form.message.class = '';
     }
   },
 
