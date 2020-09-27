@@ -31,12 +31,12 @@ nav {
             transition: fill 0.3s ease-out;
         }
 
-        @include mq($max-width: 1024px) {
+        @include mq($max-width: 1259px) {
             flex: 0 0 33.333333%;
             max-width: 33.333333%;
         }
 
-        @include mq($max-width: 767px) {
+        @include mq($max-width: 991px) {
             flex: 0 0 50%;
             max-width: 50%;
         }
