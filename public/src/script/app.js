@@ -10,38 +10,32 @@ const app = new Vue({
     form: {
       name: {
         value: null,
-        class: ''
+        class: '',
       },
       lastName: {
         value: null,
-        class: ''
+        class: '',
       },
       email: {
         value: null,
-        class: ''
+        class: '',
       },
       message: {
         value: null,
-        class: ''
+        class: '',
       },
-      errors: []
-    }
+      errors: [],
+      alert: {
+        class: 'form-alert',
+      },
+    },
   },
   //beforeCraete:
-  created: function () {
+  mounted: function () {
     // hide loader
 
-    // check cookie 
+    // check cookie
     const cookies = new CookiesManager();
-
-    // nav link animation
-    for (let i = 0; i < this.navLinks.length; i++) {
-      this.navLinks[i].addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        this.navLinkClick(e);
-      });
-    }
 
     // connect animation items
 
@@ -73,6 +67,7 @@ const app = new Vue({
       }
     },
     navLinkClick(e) {
+      e.preventDefault();
       let offset = 60;
       let href = e.target.href;
       let targetId = href.split('#')[1];
@@ -84,37 +79,43 @@ const app = new Vue({
         easing: 'easeInOutQuad',
       });
     },
-    validateEmail: function(email){
+    validateEmail: function (email) {
       var re = /\S+@\S+\.\S+/;
       return re.test(email);
     },
-    submitMessage: function(e){
-      
+    submitMessage: function (e) {
       e.preventDefault();
       e.stopPropagation();
 
       this.form.errors = [];
 
-      if(!this.form.email.value || !this.form.email.value.trim() == '' || !this.validateEmail(this.form.email.value)){
-        this.form.errors.push("Email required!");
+      if (
+        !this.form.email.value ||
+        this.form.email.value.trim() == '' ||
+        !this.validateEmail(this.form.email.value)
+      ) {
+        this.form.errors.push('Email required!');
         this.form.email.class = 'has-error';
       }
 
-      if(!this.form.message.value || !this.form.message.value.trim() == ''){
-        this.form.errors.push("Message required!");
+      if (!this.form.message.value || this.form.message.value.trim() == '') {
+        this.form.errors.push('Message required!');
         this.form.message.class = 'has-error';
       }
 
       if (!this.form.errors.length) {
+        this.form.errors.push('Message send successful!');
+        this.form.alert.class = 'form-alert success';
         return true;
-      }     
-
+      }
+      
+      this.form.alert.class = 'form-alert error';
     },
-    removeFormErrors: function(){
+    removeFormErrors: function () {
       this.form.errors = [];
       this.form.email.class = '';
       this.form.message.class = '';
-    }
+    },
   },
 
   destroyed() {

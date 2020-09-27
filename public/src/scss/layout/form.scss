@@ -46,12 +46,25 @@ form {
   }
   .form-alert {
     position: relative;
-    padding: pxrem(20px);
+    padding: pxrem(20px) 0 0 pxrem(20px);
+    &.error{
+      .inner-alert{
+        p{
+          color: $color-error;
+        }
+      }
+    }
+    &.success{
+      .inner-alert{
+        p{
+          color: $color-success;
+        }
+      }
+    }
     .inner-alert {
       p {
         padding: 0;
         margin: 0;
-        color: $color-error;
         font-family: $gotham-medium;
         font-size: pxrem(14px);
         margin-bottom: pxrem(5px);

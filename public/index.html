@@ -51,16 +51,16 @@
             <div class="col main-menu">
               <ul>
                 <li>
-                  <a href="#we-are">we are</a>
+                  <a href="#we-are" @click="navLinkClick">we are</a>
                 </li>
                 <li>
-                  <a href="#we-do">we do</a>
+                  <a href="#we-do" @click="navLinkClick">we do</a>
                 </li>
                 <li>
-                  <a href="#careers">careers</a>
+                  <a href="#careers" @click="navLinkClick">careers</a>
                 </li>
                 <li>
-                  <a href="#contact-us">contact us</a>
+                  <a href="#contact-us" @click="navLinkClick">contact us</a>
                 </li>
               </ul>
             </div>
@@ -391,7 +391,7 @@
                       </div>
                     </div>
                   </div>
-                  <div v-if="form.errors.length > 0" class="form-alert">
+                  <div v-if="form.errors.length > 0" :class="form.alert.class">
                     <div class="inner-alert">
                       <p v-for="error in form.errors">{{error}}</p>
                     </div> 
@@ -578,6 +578,7 @@
       </footer>
     </div>
     <!-- include libs plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="dist/js/libs.min.js"></script>
     <script src="dist/js/app.min.js"></script>
   </body>

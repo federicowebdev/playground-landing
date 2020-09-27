@@ -27,26 +27,18 @@ var app = new Vue({
         value: null,
         class: ''
       },
-      errors: []
+      errors: [],
+      alert: {
+        class: 'form-alert'
+      }
     }
   },
   //beforeCraete:
-  created: function created() {
-    var _this = this;
-
+  mounted: function mounted() {
     // hide loader
 
-    // check cookie 
+    // check cookie
     var cookies = new _cookiesManager.CookiesManager();
-
-    // nav link animation
-    for (var i = 0; i < this.navLinks.length; i++) {
-      this.navLinks[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        _this.navLinkClick(e);
-      });
-    }
 
     // connect animation items
 
@@ -78,6 +70,7 @@ var app = new Vue({
       }
     },
     navLinkClick: function navLinkClick(e) {
+      e.preventDefault();
       var offset = 60;
       var href = e.target.href;
       var targetId = href.split('#')[1];
@@ -95,25 +88,28 @@ var app = new Vue({
       return re.test(email);
     },
     submitMessage: function submitMessage(e) {
-
       e.preventDefault();
       e.stopPropagation();
 
       this.form.errors = [];
 
-      if (!this.form.email.value || !this.form.email.value.trim() == '' || !this.validateEmail(this.form.email.value)) {
-        this.form.errors.push("Email required!");
+      if (!this.form.email.value || this.form.email.value.trim() == '' || !this.validateEmail(this.form.email.value)) {
+        this.form.errors.push('Email required!');
         this.form.email.class = 'has-error';
       }
 
-      if (!this.form.message.value || !this.form.message.value.trim() == '') {
-        this.form.errors.push("Message required!");
+      if (!this.form.message.value || this.form.message.value.trim() == '') {
+        this.form.errors.push('Message required!');
         this.form.message.class = 'has-error';
       }
 
       if (!this.form.errors.length) {
+        this.form.errors.push('Message send successful!');
+        this.form.alert.class = 'form-alert success';
         return true;
       }
+
+      this.form.alert.class = 'form-alert error';
     },
     removeFormErrors: function removeFormErrors() {
       this.form.errors = [];
