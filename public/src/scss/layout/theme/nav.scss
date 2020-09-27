@@ -26,6 +26,11 @@ nav {
             fill: $logo-color-inverse;
             transition: fill 0.3s ease-out;
         }
+
+        @include mq($max-width: 1024px) {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
     }
     .main-menu {
         display: flex;
@@ -40,7 +45,7 @@ nav {
                     color: $white;
                     letter-spacing: 0.2px;
                     transition: color 0.2s ease-out;
-                    &:hover{
+                    &:hover {
                         color: rgba($white, 0.7);
                     }
                 }
@@ -53,6 +58,9 @@ html.changed nav {
     background-color: rgba($white, 0.98);
     border-bottom: 1px solid rgba($black, 0.05);
     height: 60px;
+    @include mq($max-width: 1024px) {
+        height: 50px;
+    }
     .logo {
         svg {
             fill: $logo-color;
@@ -62,14 +70,37 @@ html.changed nav {
         ul {
             li {
                 a {
-                    color: $black;                    
+                    color: $black;
                     font-weight: 600;
                     transition: color 0.2s ease-out;
-                    &:hover{
+                    &:hover {
                         color: rgba($black, 0.5);
                     }
                 }
             }
+        }
+    }
+}
+
+nav {
+    @include mq($max-width: 991px) {
+        background-color: rgba($white, 0.98);
+        border-bottom: 1px solid rgba($black, 0.05);
+        height: 60px;
+        @include mq($max-width: 1024px) {
+            height: 50px;
+        }
+        .logo {
+            svg {
+                width: pxrem(135px);
+                height: pxrem(23px);
+                fill: $logo-color;
+            }
+        }
+        .main-menu {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
         }
     }
 }

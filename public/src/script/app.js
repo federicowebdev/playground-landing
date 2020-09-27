@@ -7,6 +7,7 @@ const app = new Vue({
     sliderContainer: '.swiper-container',
     html: document.querySelector('html'),
     navLinks: document.querySelectorAll('nav ul li a'),
+    navOffset: 60,
     form: {
       name: {
         value: null,
@@ -52,6 +53,8 @@ const app = new Vue({
 
     // addEventListener window scroll
     window.addEventListener('scroll', this.handleScroll);
+    // addEventListener window scroll
+    window.addEventListener('resize', this.handleResize);
 
     // Swiper slider init
     this.slider = new Swiper(this.sliderContainer, {
@@ -88,15 +91,26 @@ const app = new Vue({
     },
     handleScroll(e) {
       const offset = 60;
-      if (window.pageYOffset >= offset) {
-        this.html.classList.add('changed');
-      } else {
-        this.html.classList.remove('changed');
+      if(window.innerWidth >= 1024){
+        if (window.pageYOffset >= offset) {
+          this.html.classList.add('changed');
+        } else {
+          this.html.classList.remove('changed');
+        }
       }
+      
+    },
+    handleResize(e) {
+      if(window.innerWidth <= 1024){
+        this.navOffset = 50;
+      }
+      // if(window.innerWidth < 1024){
+      //   this.html.classList.add('changed');
+      // }
     },
     navLinkClick(e) {
       e.preventDefault();
-      let offset = 60;
+      let offset = this.navOffset;
       let href = e.target.href;
       let targetId = href.split('#')[1];
       let target = document.querySelector('#' + targetId);

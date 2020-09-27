@@ -25,4 +25,16 @@
     textarea {
         height: pxrem(150px);
     }
+
+    @include mq($max-width: 991px) {
+        .position {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .form {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-top: pxrem(60px);
+        }
+    }
 }

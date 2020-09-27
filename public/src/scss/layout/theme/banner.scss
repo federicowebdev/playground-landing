@@ -3,6 +3,10 @@
 }
 .banner {
     height: pxrem(700px);
+
+    @include mq($max-width: 991px) {
+        height: pxrem(600px);
+    }
     .row {
         height: 100%;
     }
@@ -44,6 +48,24 @@
             text-align: left;
             padding-left: pxrem(100px);
             background-color: $black;
+
+            @include mq($max-width: 1024px) {
+                padding-left: pxrem(70px);
+            }
+        }
+
+        @include mq($max-width: 991px) {
+            .img {
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+                figure {
+                    background-position: center;
+                }
+            }
+            .txt {
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%;
+            }
         }
     }
 
@@ -64,6 +86,24 @@
             padding-right: pxrem(100px);
             background-color: $white;
             justify-content: flex-end;
+
+            @include mq($max-width: 1024px) {
+                padding-right: pxrem(70px);
+            }
+        }
+
+        @include mq($max-width: 991px) {
+            .img {
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+                figure {
+                    background-position: right;
+                }
+            }
+            .txt {
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%;
+            }
         }
     }
 }

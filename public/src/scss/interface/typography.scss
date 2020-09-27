@@ -1,9 +1,17 @@
 h2 {
     font-size: pxrem(78px);
+
+    @include mq($max-width: 1024px) {
+        font-size: pxrem(74px);
+    }
 }
 
 h3 {
     font-size: pxrem(74px);
+
+    @include mq($max-width: 1024px) {
+        font-size: pxrem(68px);
+    }
 }
 
 h4 {
@@ -12,6 +20,12 @@ h4 {
 
 h5 {
     font-size: pxrem(18px);
+    @include mq($max-width: 1024px) {
+        font-size: pxrem(16px);
+    }
+    @include mq($max-width: 991px) {
+        font-size: pxrem(15px);
+    }
 }
 
 h2,
@@ -27,15 +41,23 @@ p {
     font-size: pxrem(17px);
     letter-spacing: 0.13px;
     line-height: 1.7;
-}
 
-html.safari{
-    .fa{
-        display: none;
+    @include mq($max-width: 1024px) {
+        font-size: pxrem(16px);
     }
 }
 
-.fa{
+// html.safari {
+//     .fa {
+//         display: none;
+//     }
+// }
+
+.fa {
     font-family: $fontawesome;
     text-rendering: optimizeLegibility;
+
+    // @include mq($max-width: 1024px){
+    //     display: none;
+    // }
 }

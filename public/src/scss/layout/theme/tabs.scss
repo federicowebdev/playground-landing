@@ -19,6 +19,16 @@
                 }
             }
         }
+
+        @include mq($max-width: 1024px) {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+        }
+
+        @include mq($max-width: 991px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
     }
     .tabs-content {
         background-color: $white;

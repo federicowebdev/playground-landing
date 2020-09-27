@@ -25,6 +25,12 @@ select:-webkit-autofill:focus {
 form {
   width: 100%;
   position: relative;
+  .col.half.less-padding-right{
+    padding-right: pxrem(7.5px);
+  }
+  .col.half.less-padding-left{
+    padding-left: pxrem(7.5px);
+  }
   input,
   textarea {
     background-color: transparent;

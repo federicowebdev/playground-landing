@@ -44,6 +44,10 @@
             a{
                 padding: pxrem(10px) pxrem(30px);
                 font-size: pxrem(11px);
+
+                @include mq($max-width: 1024px){
+                    font-size: pxrem(9px);
+                }
             }
         }
     }
