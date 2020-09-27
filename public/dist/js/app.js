@@ -31,12 +31,15 @@ var app = new Vue({
       alert: {
         class: 'form-alert'
       }
+    },
+    tabs: {
+      data: null
     }
   },
-  //beforeCraete:
   mounted: function mounted() {
     // hide loader
 
+    this.getTab(1);
     // check cookie
     var cookies = new _cookiesManager.CookiesManager();
 
@@ -115,6 +118,20 @@ var app = new Vue({
       this.form.errors = [];
       this.form.email.class = '';
       this.form.message.class = '';
+    },
+    checkTab: function checkTab(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      // show loader tabs
+      this.getTab(e.target.dataset.id);
+    },
+    getTab: function getTab(id) {
+      var _this = this;
+
+      axios.get('/api/v1/tabs/' + id).then(function (res) {
+        _this.tabs.data = res.data.tab.content.join(' ');
+        // remove loader tabs
+      });
     }
   },
 

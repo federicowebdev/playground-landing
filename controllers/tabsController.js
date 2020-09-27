@@ -15,9 +15,7 @@ exports.getTabs = (req, res) => {
     });
     res.status(200).json({
       status: 'success',
-      data: {
-        tour: tab,
-      },
+      tab
     });
   } catch (error) {
     res.status(500).json({

@@ -278,7 +278,7 @@
                 <ul>
                   <li>
                     <div class="btn solid grey active">
-                      <a href="#first"
+                      <a href="#first" data-id="1" @click="checkTab"
                         >Vestibulum at odio sit amet
                         <i class="fa fa-angle-down"></i
                       ></a>
@@ -286,14 +286,14 @@
                   </li>
                   <li>
                     <div class="btn solid grey">
-                      <a href="#first"
+                      <a href="#second" data-id="2" @click="checkTab"
                         >Sed vehicula neque <i class="fa fa-angle-down"></i
                       ></a>
                     </div>
                   </li>
                   <li>
                     <div class="btn solid grey">
-                      <a href="#third"
+                      <a href="#third" data-id="3" @click="checkTab"
                         >Nulla id libero pretium <i class="fa fa-angle-down"></i
                       ></a>
                     </div>
@@ -303,16 +303,7 @@
               <div class="col tabs-content">
                 <div class="inner-content">
                   <p>
-                    Vestibulum at odio sit amet diam consectetur congue. Donec
-                    imperdiet tincidunt nisi non dignissim. Maecenas diam metus,
-                    fermentum a velit ut, auctor consequat ligula. In ultrices
-                    lobortis venenatis. Vestibulum ante ipsum primis in faucibus
-                    orci luctus et ultrices posuere cubilia Curae; Quisque
-                    dignissim sit amet lectus ac tincidunt. Quisque bibendum mi
-                    at tempus tempus. Suspendisse pretium, quam eu faucibus
-                    cursus, nunc leo pharetra justo, ut rutrum lorem ipsum quis
-                    velit. Aenean imperdiet molestie dignissim. Curabitur
-                    faucibus nulla metus, vel ornare libero accumsan eget.
+                    {{tabs.data}}
                   </p>
                 </div>
               </div>

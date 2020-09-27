@@ -29,11 +29,14 @@ const app = new Vue({
         class: 'form-alert',
       },
     },
+    tabs: {
+      data: null,
+    },
   },
-  //beforeCraete:
   mounted: function () {
     // hide loader
 
+    this.getTab(1);
     // check cookie
     const cookies = new CookiesManager();
 
@@ -108,13 +111,27 @@ const app = new Vue({
         this.form.alert.class = 'form-alert success';
         return true;
       }
-      
+
       this.form.alert.class = 'form-alert error';
     },
     removeFormErrors: function () {
       this.form.errors = [];
       this.form.email.class = '';
       this.form.message.class = '';
+    },
+    checkTab: function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      // show loader tabs
+      this.getTab(e.target.dataset.id);
+    },
+    getTab: function (id) {
+      axios
+        .get('/api/v1/tabs/' + id)
+        .then((res) => {
+          this.tabs.data = res.data.tab.content.join(' ');
+          // remove loader tabs
+        });
     },
   },
 
