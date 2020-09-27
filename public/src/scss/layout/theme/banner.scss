@@ -140,7 +140,7 @@
                 }
             }
         }
-        @include mq(){
+        @include mq($max-width: 320px){
             .txt {
                 padding-left: pxrem(30px);
                 padding-right: 0;
