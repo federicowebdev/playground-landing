@@ -92,6 +92,8 @@ var CookiesManager = exports.CookiesManager = function () {
   function CookiesManager() {
     _classCallCheck(this, CookiesManager);
 
+    this._html = document.querySelector('html');
+    this._body = document.querySelector('body');
     this.debug = false;
     this.setted = false;
     this.duration = 365; // 1 year
@@ -105,7 +107,7 @@ var CookiesManager = exports.CookiesManager = function () {
     this.lang = 'en';
     this.text = {
       paragraph: {
-        en: 'Our website uses cookies to improve your experience. To find out more about the cookies we use please see our Cookies Policy.'
+        en: 'Our website uses cookies to improve your experience. To find out more about the cookies we use please see our '
       },
       buttons: {
         agree: {
@@ -141,7 +143,9 @@ var CookiesManager = exports.CookiesManager = function () {
       if (document.querySelector('#cookies_ok')) {
         var ok_cookies = document.querySelector('#cookies_ok');
 
-        ok_cookies.onclick = function () {
+        ok_cookies.onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
           self.okAllCookies();
           self.destroyBanner();
         };
@@ -151,9 +155,8 @@ var CookiesManager = exports.CookiesManager = function () {
     key: 'createBanner',
     value: function createBanner() {
       this.destroyBanner();
-      var cookie_banner_info = document.getElementById('cookie-banner-info');
 
-      var html = '<div class="container-fluid">' + '<div class="row">' + '<div class="col wrapper-txt">' + '<p>' + this.text.paragraph.en + '</p>' + '</div>' + '<div class="col wrapper-btn">' + '<div class="btn solid dark">' + '<div class="bg"></div>' + '<a href="#" id="cookies_ok">' + this.text.buttons.agree.en + '</a>' + '</div>' + '</div>' + '</div>' + '</div>';
+      var html = '<div class="container-fluid">' + '<div class="row">' + '<div class="col wrapper-txt">' + '<p>' + this.text.paragraph.en + '<a href="#">Cookies Policy</a>' + '</p>' + '</div>' + '<div class="col wrapper-btn">' + '<div class="btn solid dark">' + '<div class="bg"></div>' + '<a href="#" id="cookies_ok">' + this.text.buttons.agree.en + '</a>' + '</div>' + '</div>' + '</div>' + '</div>';
 
       var body = document.querySelector('body');
 
@@ -170,8 +173,8 @@ var CookiesManager = exports.CookiesManager = function () {
     value: function destroyBanner() {
       if (document.querySelector('#cookies_banner')) {
         var c_b = document.querySelector('#cookies_banner');
-        if (window.workers.$isIE) {
-          window.workers.$body.removeChild(c_b);
+        if (this._html.classList.contains('ie')) {
+          this._body.removeChild(c_b);
         } else {
           c_b.remove();
         }

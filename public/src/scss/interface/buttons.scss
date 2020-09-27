@@ -89,14 +89,14 @@
                 align-items: center;
                 letter-spacing: 0.5px;
                 color: $black;
-                transition: color 0.3s ease-out;
+                transition: color 0.1s ease-out;
                 i {
                     margin-left: pxrem(15px);
                     font-size: pxrem(18px);
                     font-weight: 300;
                     position: relative;
                     top: pxrem(-1px);
-                    transition: transform 0.3s ease-out;
+                    transition: transform 0.1s ease-out;
                 }
             }
             &.active {
