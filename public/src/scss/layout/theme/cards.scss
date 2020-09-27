@@ -4,6 +4,9 @@
     @include mq($max-width: 991px) {
         padding: pxrem(60px) 0;
     }
+    @include mq($max-width: 767px) {
+        padding: pxrem(60px) 0 pxrem(10px);
+    }
     .container {
         width: 80%;
     }
@@ -29,6 +32,10 @@
         @include mq($max-width: 991px){
             margin: pxrem(40px) pxrem(12px);
             min-height: pxrem(330px);
+        }
+        @include mq($max-width: 767px) {
+            margin: 0 pxrem(10px);
+            min-height: pxrem(350px);
         }
         .card-header {
             background-position: center;
@@ -62,6 +69,10 @@
                 @include mq($max-width: 991px) {
                     top: 97%;
                 }
+                @include mq($max-width: 767px) {
+                    top: 86%;
+                    margin-bottom: 0;
+                }
             }
 
             @include mq($max-width: 1024px) {
@@ -71,6 +82,10 @@
 
         @include mq($max-width: 991px) {
             min-width: pxrem(330px);
+        }
+
+        @include mq($max-width: 767px) {
+            min-width: pxrem(300px);
         }
     }
 }

@@ -17,10 +17,18 @@ footer {
     .wrapper-nav {
         text-align: center;
         padding-top: pxrem(60px);
+        @include mq($max-width: 767px) {
+            padding-top: pxrem(30px);
+        }
         ul {
             li {
                 display: inline-flex;
                 margin: 0 pxrem(45px);
+
+                @include mq($max-width: 767px) {
+                    display: block;
+                    margin: pxrem(15px) 0;
+                }
                 a {
                     color: $white;
                     letter-spacing: 0.2px;
@@ -31,6 +39,9 @@ footer {
     .wrapper-socials {
         text-align: center;
         padding-top: pxrem(60px);
+        @include mq($max-width: 767px) {
+            padding-top: pxrem(30px);
+        }
         ul {
             li {
                 display: inline-flex;
@@ -40,7 +51,7 @@ footer {
                     font-size: pxrem(22px);
                     letter-spacing: 0.2px;
                     transition: color 0.2s ease-out;
-                    &:hover{
+                    &:hover {
                         color: rgba($white, 1);
                     }
                 }

@@ -10,6 +10,9 @@
         margin-top: 50px;
         height: pxrem(650px);
     }
+    @include mq($max-width: 767px) {
+        height: pxrem(600px);
+    }
 }
 
 .swiper-slide {
@@ -33,7 +36,6 @@
                 width: 100%;
                 height: 100%;
                 background: rgba($black, 0.5);
-                //background: rgb(255, 255, 255);
                 background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
             }
         }
@@ -96,16 +98,28 @@
 .swiper-button-next:after,
 .swiper-button-prev:after {
     font-size: pxrem(30px) !important;
+
+    @include mq($max-width: 767px){
+        font-size: pxrem(20px) !important;
+    }
 }
 
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
     right: pxrem(70px) !important;
+
+    @include mq($max-width: 767px){
+        right: pxrem(10px) !important;
+    }
 }
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     left: pxrem(70px) !important;
+
+    @include mq($max-width: 767px){
+        left: pxrem(10px) !important;
+    }
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets,

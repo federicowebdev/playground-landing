@@ -1,4 +1,4 @@
-:root{
+:root {
     --swiper-theme-color: #fff !important;
 }
 main {
@@ -7,7 +7,7 @@ main {
     border-left: 1px solid $dark-grey;
     border-right: 1px solid $dark-grey;
 
-    @include mq($max-width: 1440px){
+    @include mq($max-width: 1440px) {
         border: none;
     }
 }

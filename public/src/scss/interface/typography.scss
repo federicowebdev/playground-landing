@@ -4,6 +4,10 @@ h2 {
     @include mq($max-width: 1024px) {
         font-size: pxrem(74px);
     }
+
+    @include mq($max-width: 767px) {
+        font-size: pxrem(70px);
+    }
 }
 
 h3 {
@@ -11,6 +15,10 @@ h3 {
 
     @include mq($max-width: 1024px) {
         font-size: pxrem(68px);
+    }
+
+    @include mq($max-width: 767px) {
+        font-size: pxrem(62px);
     }
 }
 
@@ -44,6 +52,10 @@ p {
 
     @include mq($max-width: 1024px) {
         font-size: pxrem(16px);
+    }
+
+    @include mq($max-width: 767px) {
+        font-size: pxrem(15px);
     }
 }
 

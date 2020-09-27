@@ -1,5 +1,9 @@
 .wrapper-tabs {
     padding: pxrem(100px) 0;
+
+    @include mq($max-width: 767px) {
+        padding: pxrem(60px) 0;
+    }
     .tabs-link,
     .tabs-content {
         padding: 0;

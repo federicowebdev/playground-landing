@@ -37,4 +37,17 @@
             margin-top: pxrem(60px);
         }
     }
+
+    @include mq($max-width: 767px) {
+        .col.half {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .col.half.less-padding-right {
+            padding-right: pxrem(15px);
+        }
+        .col.half.less-padding-left {
+            padding-left: pxrem(15px);
+        }
+    }
 }

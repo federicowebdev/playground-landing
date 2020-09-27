@@ -67,6 +67,23 @@
                 max-width: 58.333333%;
             }
         }
+
+        @include mq($max-width: 767px) {
+            .img {
+                flex: 0 0 100%;
+                max-width: 100%;
+                figure {
+                    background-position: center;
+                }
+            }
+            .txt {
+                flex: 0 0 100%;
+                max-width: 100%;
+                br{
+                    display: none;
+                }
+            }
+        }
     }
 
     &.txt-right {
@@ -96,6 +113,7 @@
             .img {
                 flex: 0 0 41.666667%;
                 max-width: 41.666667%;
+                order: 0;
                 figure {
                     background-position: right;
                 }
@@ -103,6 +121,23 @@
             .txt {
                 flex: 0 0 58.333333%;
                 max-width: 58.333333%;
+            }
+        }
+        @include mq($max-width: 767px) {
+            .img {
+                flex: 0 0 100%;
+                max-width: 100%;
+                figure {
+                    background-position: center;
+                }
+            }
+            .txt {
+                flex: 0 0 100%;
+                max-width: 100%;
+                text-align: left;
+                br{
+                    display: none;
+                }
             }
         }
     }
