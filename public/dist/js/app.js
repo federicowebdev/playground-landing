@@ -33,11 +33,19 @@ var app = new Vue({
       }
     },
     tabs: {
-      data: null
+      data: null,
+      class: {
+        active: 'btn solid grey active',
+        flat: 'btn solid grey'
+      },
+      loader: {
+        class: 'tab-loader show'
+      }
     }
   },
   mounted: function mounted() {
     // hide loader
+    this.loaderManager();
 
     this.getTab(1);
     // check cookie
@@ -64,6 +72,25 @@ var app = new Vue({
   },
 
   methods: {
+    loaderManager: function loaderManager() {
+      var _this = this;
+
+      setTimeout(function () {
+        _this.html.classList.add('show-app-loader');
+      }, 250);
+
+      setTimeout(function () {
+        _this.html.classList.add('remove-app-loader');
+      }, 1300);
+
+      setTimeout(function () {
+        _this.html.classList.add('slide-out-app-loader');
+        setTimeout(function () {
+          _this.html.classList.remove('show-app-loader');
+          _this.html.classList.remove('remove-app-loader');
+        }, 500);
+      }, 1450);
+    },
     handleScroll: function handleScroll(e) {
       var offset = 60;
       if (window.pageYOffset >= offset) {
@@ -107,8 +134,12 @@ var app = new Vue({
       }
 
       if (!this.form.errors.length) {
-        this.form.errors.push('Message send successful!');
+        this.form.errors.push('Message sent successful!');
         this.form.alert.class = 'form-alert success';
+        this.form.name.value = null;
+        this.form.lastName.value = null;
+        this.form.email.value = null;
+        this.form.message.value = null;
         return true;
       }
 
@@ -123,14 +154,24 @@ var app = new Vue({
       e.preventDefault();
       e.stopPropagation();
       // show loader tabs
+      this.tabs.loader.class = 'tab-loader show';
+      var tabLinks = document.querySelectorAll('.tabs-link .btn');
+      for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active');
+      }
+      var parent = e.target.closest('.btn');
+      parent.classList.add('active');
       this.getTab(e.target.dataset.id);
     },
     getTab: function getTab(id) {
-      var _this = this;
+      var _this2 = this;
 
       axios.get('/api/v1/tabs/' + id).then(function (res) {
-        _this.tabs.data = res.data.tab.content.join(' ');
         // remove loader tabs
+        setTimeout(function () {
+          _this2.tabs.loader.class = 'tab-loader';
+          _this2.tabs.data = res.data.tab.content.join(' ');
+        }, 1500);
       });
     }
   },

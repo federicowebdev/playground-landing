@@ -1,7 +1,11 @@
 footer {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    background-color: $black;
     .container {
         padding: pxrem(100px) 0 pxrem(120px);
-        background-color: $black;
     }
     .wrapper-logo {
         text-align: center;

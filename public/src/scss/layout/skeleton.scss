@@ -33,4 +33,7 @@ ol {
 
 a {
     text-decoration: none;
+    *{
+        pointer-events: none;
+    }
 }
