@@ -49,13 +49,12 @@ const app = new Vue({
     // check cookie
     const cookies = new CookiesManager();
 
-    // connect animation items
-
     // addEventListener window scroll
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
     // addEventListener window scroll
     window.addEventListener('resize', this.handleResize);
-
+    this.handleResize();
     // Swiper slider init
     this.slider = new Swiper(this.sliderContainer, {
       loop: true,
@@ -89,6 +88,9 @@ const app = new Vue({
         }, 500);
       }, 1450);
     },
+    hambManager: function(){
+      this.html.classList.toggle('mobile-menu-show');
+    },
     handleScroll(e) {
       const offset = 60;
       if(window.innerWidth >= 1024){
@@ -104,16 +106,16 @@ const app = new Vue({
       if(window.innerWidth <= 1024){
         this.navOffset = 50;
       }
-      // if(window.innerWidth < 1024){
-      //   this.html.classList.add('changed');
-      // }
     },
-    navLinkClick(e) {
+    navLinkClick(e, mobile = false) {
       e.preventDefault();
       let offset = this.navOffset;
       let href = e.target.href;
       let targetId = href.split('#')[1];
       let target = document.querySelector('#' + targetId);
+      if(mobile){
+        this.html.classList.remove('mobile-menu-show');
+      }
       anime({
         targets: 'html, body',
         scrollTop: target.offsetTop - offset,

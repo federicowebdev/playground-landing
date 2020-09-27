@@ -6,6 +6,10 @@ main {
     margin: auto;
     border-left: 1px solid $dark-grey;
     border-right: 1px solid $dark-grey;
+
+    @include mq($max-width: 1440px){
+        border: none;
+    }
 }
 
 .container {
