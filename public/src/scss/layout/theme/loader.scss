@@ -1,8 +1,8 @@
 .app-loader {
     position: fixed;
     top: 0;
-    left: 0;
-    transform: scaleY(1);
+    left: 50%;
+    transform: translate3d(-50%,0,0) scaleY(1);
     width: 100vw;
     height: 100vh;
     max-width: 1440px;
@@ -47,6 +47,7 @@ html.remove-app-loader{
 
 html.slide-out-app-loader{
     .app-loader {
-        transform: scaleY(0);
+        transform: translate3d(-50%,0,0) scaleY(0);
+
     }
 }

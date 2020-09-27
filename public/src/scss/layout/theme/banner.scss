@@ -112,8 +112,7 @@
         @include mq($max-width: 991px) {
             .img {
                 flex: 0 0 41.666667%;
-                max-width: 41.666667%;
-                order: 0;
+                max-width: 41.666667%;                
                 figure {
                     background-position: right;
                 }
@@ -127,6 +126,7 @@
             .img {
                 flex: 0 0 100%;
                 max-width: 100%;
+                order: 0;
                 figure {
                     background-position: center;
                 }
@@ -138,6 +138,12 @@
                 br{
                     display: none;
                 }
+            }
+        }
+        @include mq(){
+            .txt {
+                padding-left: pxrem(30px);
+                padding-right: 0;
             }
         }
     }

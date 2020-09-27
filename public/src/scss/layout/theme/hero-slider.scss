@@ -13,6 +13,9 @@
     @include mq($max-width: 767px) {
         height: pxrem(600px);
     }
+    @include mq($max-width: 320px) {
+        height: pxrem(500px);
+    }
 }
 
 .swiper-slide {

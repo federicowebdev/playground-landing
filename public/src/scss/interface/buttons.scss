@@ -98,6 +98,11 @@
                 @include mq($max-width: 1024px){
                     font-size: pxrem(13px);
                 }
+
+                @include mq($max-width: 320px){
+                    font-size: pxrem(12px);
+                    padding: pxrem(22px) pxrem(50px);
+                }
                 i {
                     margin-left: pxrem(15px);
                     font-size: pxrem(18px);
